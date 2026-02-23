@@ -243,6 +243,9 @@ export default async function handler(req: NextRequest): Promise<Response> {
         },
       })
 
+      // Filter out .password file from directory listing
+      folderData.value = (folderData.value ?? []).filter((item: any) => item.name !== '.password')
+
       // Extract next page token from full @odata.nextLink
       const nextPage = folderData['@odata.nextLink']
         ? folderData['@odata.nextLink'].match(/&\$skiptoken=(.+)/i)[1]
