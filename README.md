@@ -91,7 +91,7 @@ Live demo at [lyc8503's Fileshare](https://pan.lyc8503.net).
       <td>🔎 Native Search</td>
     </tr>
     <tr>
-      <td>Password protected routes and files. <a href="https://ovi.swo.moe/docs/features/protected-folders">Details here</a></td>
+      <td>Password protected routes and files. Place a <code>.password</code> file inside the protected folder – it is automatically hidden from directory listings. <a href="https://ovi.swo.moe/docs/features/protected-folders">Details here</a></td>
       <td>
         Compress and download multiple files or folders.
         <a href="https://ovi.swo.moe/docs/features/multi-file-folder-download">Details here</a>
