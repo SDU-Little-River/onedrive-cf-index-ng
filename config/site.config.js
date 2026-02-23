@@ -25,7 +25,7 @@ module.exports = {
   footer:
     '© 2026 xhbsh',
 
-  protectedRoutes: ['/FamilyPhotos'],
+  protectedRoutes: ['/'],
 
   email: '',
 
