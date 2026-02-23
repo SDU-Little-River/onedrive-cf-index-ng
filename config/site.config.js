@@ -6,7 +6,7 @@ module.exports = {
   userPrincipalName: process.env.USER_PRINCIPLE_NAME || '260342855@qq.com',
 
   // 网站图标，保持默认或者换成你自己的（把图片放在 public/icons 文件夹里）
-  icon: 'https://www.xhbsh.top/img/xhbsh.png',
+  icon: '/icons/128.png',
 
   title: "test",
 
