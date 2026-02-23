@@ -3,7 +3,7 @@ module.exports = {
   // 为了安全，建议这里不要直接写邮箱，而是保留下面这行代码不动。
   // 然后去 Cloudflare 后台的环境变量里添加一个叫 USER_PRINCIPLE_NAME 的变量，填入你的邮箱。
   // 如果你觉得麻烦，直接把 'me@lyc8503.net' 替换成你的邮箱 'xxxx@outlook.com' 也可以。
-  userPrincipalName: process.env.USER_PRINCIPLE_NAME || '11@outlook.com',
+  userPrincipalName: process.env.USER_PRINCIPLE_NAME || '260342855@qq.com',
 
   // 网站图标，保持默认或者换成你自己的（把图片放在 public/icons 文件夹里）
   icon: 'https://www.xhbsh.top/img/xhbsh.png',
