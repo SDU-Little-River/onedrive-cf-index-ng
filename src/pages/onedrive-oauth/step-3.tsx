@@ -29,7 +29,7 @@ export default function OAuthStep3({ accessToken, expiryTime, refreshToken, erro
 
   const [buttonContent, setButtonContent] = useState(
     <div>
-      <span>{'Store tokens'}</span> <FontAwesomeIcon icon="key" />
+      <span>{'存储令牌'}</span> <FontAwesomeIcon icon="key" />
     </div>
   )
   const [buttonError, setButtonError] = useState(false)
@@ -38,7 +38,7 @@ export default function OAuthStep3({ accessToken, expiryTime, refreshToken, erro
     setButtonError(false)
     setButtonContent(
       <div>
-        <span>{'Storing tokens'}</span> <LoadingIcon className="ml-1 inline h-4 w-4 animate-spin" />
+        <span>{'正在存储令牌'}</span> <LoadingIcon className="ml-1 inline h-4 w-4 animate-spin" />
       </div>
     )
 
@@ -47,7 +47,7 @@ export default function OAuthStep3({ accessToken, expiryTime, refreshToken, erro
         setButtonError(false)
         setButtonContent(
           <div>
-            <span>{'Stored! Going home...'}</span> <FontAwesomeIcon icon="check" />
+            <span>{'已存储！正在返回主页...'}</span> <FontAwesomeIcon icon="check" />
           </div>
         )
         setTimeout(() => {
@@ -58,7 +58,7 @@ export default function OAuthStep3({ accessToken, expiryTime, refreshToken, erro
         setButtonError(true)
         setButtonContent(
           <div>
-            <span>{'Error storing the token'}</span> <FontAwesomeIcon icon="exclamation-circle" />
+            <span>{'存储令牌出错'}</span> <FontAwesomeIcon icon="exclamation-circle" />
           </div>
         )
       })
@@ -84,31 +84,30 @@ export default function OAuthStep3({ accessToken, expiryTime, refreshToken, erro
                 priority
               />
             </div>
-            <h3 className="mb-4 text-center text-xl font-medium">{'Welcome to your new onedrive-cf-index-ng 🎉'}</h3>
+            <h3 className="mb-4 text-center text-xl font-medium">{'欢迎使用 onedrive-cf-index-ng 🎉'}</h3>
 
-            <h3 className="mb-2 mt-4 text-lg font-medium">{'Step 3/3: Get access and refresh tokens'}</h3>
+            <h3 className="mb-2 mt-4 text-lg font-medium">{'步骤 3/3：获取访问令牌和刷新令牌'}</h3>
             {error ? (
               <div>
                 <p className="py-1 font-medium text-red-500">
                   <FontAwesomeIcon icon="exclamation-circle" className="mr-2" />
-                  <span>{`Whoops, looks like we got a problem: ${error}.`}</span>
+                  <span>{`哎呀，出现了问题：${error}。`}</span>
                 </p>
                 <p className="my-2 whitespace-pre-line rounded border border-gray-400/20 bg-gray-50 p-2 font-mono text-sm opacity-80 dark:bg-gray-800">
                   {description}
                 </p>
                 {errorUri && (
                   <p>
-                    Check out{' '}
+                    查看{' '}
                     <a
                       href={errorUri}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:underline dark:text-blue-500"
                     >
-                      {/* eslint-disable-next-line react/no-unescaped-entities */}
-                      Microsoft's official explanation
+                      微软官方说明
                     </a>{' '}
-                    on the error message.
+                    了解错误信息详情。
                   </p>
                 )}
                 <div className="mb-2 mt-6 text-right">
@@ -118,19 +117,19 @@ export default function OAuthStep3({ accessToken, expiryTime, refreshToken, erro
                       router.push('/onedrive-oauth/step-1')
                     }}
                   >
-                    <FontAwesomeIcon icon="arrow-left" /> <span>{'Restart'}</span>
+                    <FontAwesomeIcon icon="arrow-left" /> <span>{'重新开始'}</span>
                   </button>
                 </div>
               </div>
             ) : (
               <div>
-                <p className="py-1 font-medium">{'Success! The API returned what we needed.'}</p>
+                <p className="py-1 font-medium">{'成功！API 返回了所需内容。'}</p>
                 <ol className="py-1">
                   {accessToken && (
                     <li>
                       <FontAwesomeIcon icon={['far', 'check-circle']} className="text-green-500" />{' '}
                       <span>
-                        {'Acquired access_token: '}
+                        {'已获取 access_token：'}
                         <code className="font-mono text-sm opacity-80">{`${accessToken.substring(0, 60)}...`}</code>
                       </span>
                     </li>
@@ -139,7 +138,7 @@ export default function OAuthStep3({ accessToken, expiryTime, refreshToken, erro
                     <li>
                       <FontAwesomeIcon icon={['far', 'check-circle']} className="text-green-500" />{' '}
                       <span>
-                        {'Acquired refresh_token: '}
+                        {'已获取 refresh_token：'}
                         <code className="font-mono text-sm opacity-80">{`${refreshToken.substring(0, 60)}...`}</code>
                       </span>
                     </li>
@@ -148,15 +147,15 @@ export default function OAuthStep3({ accessToken, expiryTime, refreshToken, erro
 
                 <p className="py-1 text-sm font-medium text-teal-500">
                   <FontAwesomeIcon icon="exclamation-circle" className="mr-1" />{' '}
-                  {'These tokens may take a few seconds to populate after you click the button below. ' +
-                    'If you go back home and still see the welcome page telling you to re-authenticate, ' +
-                    'revisit home and do a hard refresh.'}
+                  {'点击下方按钮后，这些令牌可能需要几秒钟才能生效。' +
+                    '如果返回主页后仍看到欢迎页要求重新认证，' +
+                    '请重新访问主页并强制刷新。'}
                 </p>
                 <p className="py-1">
-                  {'Final step, click the button below to store these tokens persistently before they expire ' +
-                    `after ${Math.floor(expiryTimeLeft / 60)} minutes ${expiryTimeLeft - Math.floor(expiryTimeLeft / 60) * 60
-                    } seconds. ` +
-                    "Don't worry, after storing them, onedrive-cf-index-ng will take care of token refreshes and updates after your site goes live."}
+                  {'最后一步，请在令牌过期前点击下方按钮将其永久存储，剩余时间：' +
+                    `${Math.floor(expiryTimeLeft / 60)} 分 ${expiryTimeLeft - Math.floor(expiryTimeLeft / 60) * 60
+                    } 秒。` +
+                    '存储后，onedrive-cf-index-ng 将在网站上线后自动处理令牌刷新和更新。'}
                 </p>
 
                 <div className="mb-2 mt-6 text-right">

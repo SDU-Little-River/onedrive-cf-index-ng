@@ -39,13 +39,12 @@ export default function OAuthStep2() {
                 priority
               />
             </div>
-            <h3 className="mb-4 text-center text-xl font-medium">{'Welcome to your new onedrive-cf-index-ng 🎉'}</h3>
+            <h3 className="mb-4 text-center text-xl font-medium">{'欢迎使用 onedrive-cf-index-ng 🎉'}</h3>
 
-            <h3 className="mb-2 mt-4 text-lg font-medium">{'Step 2/3: Get authorisation code'}</h3>
+            <h3 className="mb-2 mt-4 text-lg font-medium">{'步骤 2/3：获取授权码'}</h3>
 
             <p className="py-1 text-sm font-medium text-red-400">
-              <FontAwesomeIcon icon="exclamation-circle" className="mr-1" /> If you are not the owner of this website,
-              stop now, as continuing with this process may expose your personal files in OneDrive.
+              <FontAwesomeIcon icon="exclamation-circle" className="mr-1" /> 如果您不是此网站的管理员，请立即停止操作，继续操作可能会暴露您在 OneDrive 中的个人文件。
             </p>
 
             <div
@@ -63,12 +62,9 @@ export default function OAuthStep2() {
             </div>
 
             <p className="py-1">
-              The OAuth link for getting the authorisation code has been created. Click on the link above to get the{' '}
-              <b className="underline decoration-yellow-400 decoration-wavy">authorisation code</b>. Your browser will
-              {/* eslint-disable-next-line react/no-unescaped-entities */}
-              open a new tab to Microsoft's account login page. After logging in and authenticating with your Microsoft
-              account, you will be redirected to a blank page on localhost. Paste{' '}
-              <b className="underline decoration-teal-500 decoration-wavy">the entire redirected URL</b> down below.
+              获取授权码的 OAuth 链接已生成。点击上方链接以获取{' '}
+              <b className="underline decoration-yellow-400 decoration-wavy">授权码</b>。您的浏览器将打开一个新标签页，跳转至 Microsoft 账号登录页面。登录并完成 Microsoft 账号认证后，您将被重定向到 localhost 上的空白页面。请将{' '}
+              <b className="underline decoration-teal-500 decoration-wavy">整个重定向 URL</b> 粘贴到下方。
             </p>
 
             <div className="mx-auto my-4 w-2/3 overflow-hidden rounded">
@@ -91,15 +87,15 @@ export default function OAuthStep2() {
               }}
             />
 
-            <p className="py-1">{'The authorisation code extracted is:'}</p>
+            <p className="py-1">{'提取到的授权码为：'}</p>
             <p className="my-2 overflow-hidden truncate rounded border border-gray-400/20 bg-gray-50 p-2 font-mono text-sm opacity-80 dark:bg-gray-800">
-              {authCode ?? <span className="animate-pulse">{'Waiting for code...'}</span>}
+              {authCode ?? <span className="animate-pulse">{'等待授权码...'}</span>}
             </p>
 
             <p>
               {authCode
-                ? '✅ You can now proceed onto the next step: requesting your access token and refresh token.'
-                : '❌ No valid code extracted.'}
+                ? '✅ 您现在可以进行下一步：请求访问令牌和刷新令牌。'
+                : '❌ 未提取到有效的授权码。'}
             </p>
 
             <div className="mb-2 mt-6 text-right">
@@ -113,11 +109,11 @@ export default function OAuthStep2() {
               >
                 {buttonLoading ? (
                   <>
-                    <span>{'Requesting tokens'}</span> <LoadingIcon className="ml-1 inline h-4 w-4 animate-spin" />
+                    <span>{'正在请求令牌'}</span> <LoadingIcon className="ml-1 inline h-4 w-4 animate-spin" />
                   </>
                 ) : (
                   <>
-                    <span>{'Get tokens'}</span> <FontAwesomeIcon icon="arrow-right" />
+                    <span>{'获取令牌'}</span> <FontAwesomeIcon icon="arrow-right" />
                   </>
                 )}
               </button>
