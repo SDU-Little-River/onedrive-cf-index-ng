@@ -25,16 +25,15 @@ export default function OAuthStep1() {
             <div className="mx-auto w-52">
               <Image src="/images/fabulous-fireworks.png" width={912} height={912} alt="fabulous fireworks" priority />
             </div>
-            <h3 className="mb-4 text-center text-xl font-medium">{'Welcome to your new onedrive-cf-index-ng 🎉'}</h3>
+            <h3 className="mb-4 text-center text-xl font-medium">{'欢迎使用 onedrive-cf-index-ng 🎉'}</h3>
 
-            <h3 className="mb-2 mt-4 text-lg font-med ium">{'Step 1/3: Preparations'}</h3>
+            <h3 className="mb-2 mt-4 text-lg font-medium">{'步骤 1/3：准备工作'}</h3>
 
             <p className="py-1">
-              Authorisation is required as no valid{' '}
-              <code className="font-mono text-sm underline decoration-pink-600 decoration-wavy">access_token</code> or{' '}
-              <code className="font-mono text-sm underline decoration-green-600 decoration-wavy">refresh_token</code> is
-              present on this deployed instance. Check the following configurations before proceeding with authorising
-              onedrive-cf-index-ng with your own Microsoft account.
+              需要授权，因为此部署实例上没有有效的{' '}
+              <code className="font-mono text-sm underline decoration-pink-600 decoration-wavy">access_token</code> 或{' '}
+              <code className="font-mono text-sm underline decoration-green-600 decoration-wavy">refresh_token</code>。
+              请在继续授权 onedrive-cf-index-ng 使用您的 Microsoft 账号前，检查以下配置。
             </p>
 
             <div className="my-4 overflow-hidden">
@@ -93,9 +92,8 @@ export default function OAuthStep1() {
             </div>
 
             <p className="py-1 text-sm font-medium">
-              <FontAwesomeIcon icon="exclamation-triangle" className="mr-1 text-yellow-400" /> If you see anything
-              missing or incorrect, you need to reconfigure{' '}
-              <code className="font-mono text-xs">/config/api.config.js</code> and redeploy this instance.
+              <FontAwesomeIcon icon="exclamation-triangle" className="mr-1 text-yellow-400" /> 如果发现任何缺失或不正确的配置，请重新配置{' '}
+              <code className="font-mono text-xs">/config/api.config.js</code> 并重新部署此实例。
             </p>
 
             <div className="mb-2 mt-6 text-right">
@@ -105,7 +103,7 @@ export default function OAuthStep1() {
                   router.push('/onedrive-oauth/step-2')
                 }}
               >
-                <span>{'Proceed to OAuth'}</span> <FontAwesomeIcon icon="arrow-right" />
+                <span>{'前往 OAuth 授权'}</span> <FontAwesomeIcon icon="arrow-right" />
               </button>
             </div>
           </div>

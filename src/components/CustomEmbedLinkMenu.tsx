@@ -75,24 +75,24 @@ export default function CustomEmbedLinkMenu({
           >
             <div className="inline-block max-h-[80vh] w-full max-w-3xl transform overflow-hidden overflow-y-scroll rounded border border-gray-400/30 bg-white p-4 text-left align-middle text-sm shadow-xl transition-all dark:bg-gray-900 dark:text-white">
               <Dialog.Title as="h3" className="py-2 text-xl font-bold">
-                {'Customise direct link'}
+                {'自定义直链'}
               </Dialog.Title>
               <Dialog.Description as="p" className="py-2 opacity-80">
                 <>
-                  {'Change the raw file direct link to a URL ending with the extension of the file.'}{' '}
+                  {'将文件直链修改为以文件扩展名结尾的 URL。'}{' '}
                   <a
                     href="https://ovi.swo.moe/docs/features/customise-direct-link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-400 underline"
                   >
-                    {'What is this?'}
+                    {'这是什么？'}
                   </a>
                 </>
               </Dialog.Description>
 
               <div className="mt-4">
-                <h4 className="py-2 text-xs font-medium uppercase tracking-wider">{'Filename'}</h4>
+                <h4 className="py-2 text-xs font-medium uppercase tracking-wider">{'文件名'}</h4>
                 <input
                   className="mb-2 w-full rounded border border-gray-600/10 p-2.5 font-mono focus:outline-none focus:ring focus:ring-blue-300 dark:bg-gray-600 dark:text-white dark:focus:ring-blue-700"
                   ref={focusInputRef}
@@ -101,21 +101,21 @@ export default function CustomEmbedLinkMenu({
                 />
 
                 <LinkContainer
-                  title={'Default'}
+                  title={'默认'}
                   value={`${getBaseUrl()}/api/raw?path=${readablePath}${hashedToken ? `&odpt=${hashedToken}` : ''}`}
                 />
                 <LinkContainer
-                  title={'URL encoded'}
+                  title={'URL 编码'}
                   value={`${getBaseUrl()}/api/raw?path=${path}${hashedToken ? `&odpt=${hashedToken}` : ''}`}
                 />
                 <LinkContainer
-                  title={'Customised'}
+                  title={'自定义'}
                   value={`${getBaseUrl()}/api/name/${name}?path=${readablePath}${
                     hashedToken ? `&odpt=${hashedToken}` : ''
                   }`}
                 />
                 <LinkContainer
-                  title={'Customised and encoded'}
+                  title={'自定义并编码'}
                   value={`${getBaseUrl()}/api/name/${name}?path=${path}${hashedToken ? `&odpt=${hashedToken}` : ''}`}
                 />
               </div>
