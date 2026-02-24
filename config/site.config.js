@@ -8,7 +8,7 @@ module.exports = {
   // 网站图标，保持默认或者换成你自己的（把图片放在 public/icons 文件夹里）
   icon: '/icons/128.png',
 
-  title: "test",
+  title: "相册",
 
   // 【核心修改】你要展示的根目录。
   // 1. 如果你在 OneDrive 里专门建了一个叫 "FamilyPhotos" 的文件夹放照片，这里就填 '/FamilyPhotos'。
